@@ -19,11 +19,12 @@ class ChargesController < ApplicationController
       	currency: charge.currency,
       	customer_id: customer.id,
       	card: params[:stripeToken],
-      	product_id: 1
+      	product_id: 1,
+      	uuid: SecureRandom.uuid
 	  )
 
 	  redirect_to purchase
-	  
+
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to new_charge_path

@@ -1,2 +1,24 @@
-<p>This is You purchase</p>
-<p>Your Purchase is <%= @purchase %></p>
+<section id="content-receipt" class="clearfix">
+  <div id="receipt-container">
+    <div class="dotmatrix left"></div>
+    <div id="receipt-content">
+      <h4 id="receipt-title">Thank You!</h4>
+      <p><strong>RECEIPT</strong></p>
+      <div id="receipt-details" class="row clearfix">
+        <div class="col-sm-8 receipt-left">
+          <p><strong class="font-weight-heavy">Your Product</strong><br/> <span class="font-weight-light">What you sold</span></p>
+        </div>
+        <div class="col-sm-4">
+          $4.99
+        </div>
+      </div>
+      <a href="https://learn-rails-payment.s3.ap-south-1.amazonaws.com/Screenshot+from+2022-07-12+18-07-23.png">
+      <button type="button" class="btn btn-success btn-xs">DOWNLOAD</button></a>
+      <footer id="receipt-footer">
+        <small>Your purchase is complete. We hope you enjoy it!</small>
+      </footer>
+    </div>
+    <div class="dotmatrix right"></div>
+  </div>
+  <div id="receipt-shadow"></div>
+</section>
