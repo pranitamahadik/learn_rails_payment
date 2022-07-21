@@ -14,7 +14,9 @@ gem 'bootstrap-sass'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "figaro"
 gem 'letter_opener' , group: :development
-
+gem 'activeadmin'
+gem 'inherited_resources'
+gem 'devise'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
