@@ -1,25 +1,25 @@
 class ChargesController < ApplicationController
 	def create
 	  # Amount in cents
-
+	  product = Product.find_by_sku("KittyOne")
 	  customer = Stripe::Customer.create({
 	    email: params[:stripeEmail],
 	    source: params[:stripeToken],
 	  })
 	  charge = Stripe::PaymentIntent.create({
 	    customer: customer.id,
-	    amount: params[:amount],
+	    amount: product.price_in_cents,
 	    description: 'Rails Stripe customer',
 	    currency: 'usd',
 	  })
 	  purchase = Purchase.create(
 	  	email: params[:stripeEmail],
-      	amount: params[:amount],
+      	amount: product.price_in_cents,
       	description: charge.description,
       	currency: charge.currency,
       	customer_id: customer.id,
       	card: params[:stripeToken],
-      	product_id: 1,
+      	product_id: product.id,
       	uuid: SecureRandom.uuid
 	  )
 
