@@ -11,6 +11,9 @@ gem 'sqlite3', '~> 1.4', group: [:development, :test]
 gem 'pg', group: :production
 gem 'rails_12factor' , group: :production
 gem 'bootstrap-sass'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem "figaro"
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
