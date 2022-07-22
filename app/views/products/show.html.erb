@@ -21,7 +21,7 @@
                   <%= hidden_field_tag 'stripeToken' %>
                   <%= hidden_field_tag 'amount', @product.price_in_cents %>
                   <%= hidden_field_tag 'stripeEmail' %>
-                  <%= hidden_field_tag 'product_id' @product.id%>
+                  <%= hidden_field_tag 'product_id', @product.id%>
                   <button id="btn-buy" type="button" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>Buy this!</button>
 <script>
     var handler = StripeCheckout.configure({
